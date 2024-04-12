@@ -6,4 +6,3 @@ subprocess.run(["python",path_one])
 path_two = "C:\\Users\\jdabh\\Desktop\\proj22\\web.py"
 subprocess.run(["python",path_two])
 
-
