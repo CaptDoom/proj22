@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classroom Schedule</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            color: #ff6347;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        label, input[type="text"], input[type="submit"] {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6347;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #555;
+            margin: 5px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Classroom Schedule</h1>
+    <form method="POST">
+        <label for="day">Day:</label><br>
+        <input type="text" id="day" name="day"><br>
+        <label for="time_slot">Time Slot:</label><br>
+        <input type="text" id="time_slot" name="time_slot"><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if classrooms %}
+    <h2>Classrooms available on {{ day }} at {{ time_slot }}:</h2>
+    <ul>
+        {% for classroom in classrooms %}
+        <li>{{ classroom }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if ongoing %}
+        <h2>Ongoing Classes:</h2>
+        <ul>
+            {% for classroom in ongoing %}
+                <li>{{ classroom }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
