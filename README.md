@@ -1,0 +1,1 @@
+This project consists of a Flask web application managing classroom schedules, and a user authentication system. It allows users to create email files, sign up, log in, and delete accounts, demonstrating basic web development and user management functionalities in Python.
